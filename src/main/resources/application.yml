@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: financing
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3307/financing_db
+    username: user
+    password: user-password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.mailgun.org
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+provider:
+  FAST_BANK:
+    url: https://shop.uat.klix.app/api/FastBank/applications
+    expire-after-hours: 24
+    enabled: true
+  SOLID_BANK:
+    url: https://shop.uat.klix.app/api/SolidBank/applications
+    expire-after-hours: 16
+    enabled: true
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
